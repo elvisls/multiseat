@@ -1,0 +1,10 @@
+Source: multiseat-script
+Maintainer: Elvis LS <elvis.ls@outlook.com>
+Section: misc
+Priority: optional
+Standards-Version: 0.1
+Build-Depends: bash
+
+Package: multiseat-script
+Architecture: any
+Depends: $(shlibs:Depends), $(misc:Depends), openbox, xmessage, xephyr-multiseat, lightdm

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+while [ $pass2 != $pass1 ]
+do
+	echo 'Enter password for multiseat account: '
+	read pass1
+	echo 'Retype password: '
+	read pass2
+	if [ $pass2 != $pass1 ]
+	then
+		echo 'Passwords do not match'
+	fi
+done
+
+useradd -r -m -p $pass2 -d /multiseat multiseat
+
+cp -r /tmp/openbox/ /multiseat/.config/
+
+echo 'This script requires a xorg.conf set up for 2 monitors and 1 screen '
+echo 'edit the config file in /etc/multiseat.conf to configure the screen size, keyboard and mouse, etc.'
